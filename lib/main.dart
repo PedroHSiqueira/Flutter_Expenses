@@ -7,7 +7,7 @@ import 'models/transaction.dart';
 main() => runApp(const ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
-  const ExpensesApp({Key? key}) : super(key: key);
+  const ExpensesApp({super.key});
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(home: MyHomePage());
@@ -15,7 +15,7 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
