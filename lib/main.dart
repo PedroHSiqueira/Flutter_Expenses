@@ -4,24 +4,30 @@ import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
 import 'models/transaction.dart';
 
-main() => runApp(const ExpensesApp());
+main() => runApp(ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
-  const ExpensesApp({super.key});
+  ExpensesApp({super.key});
+  final ThemeData tema = ThemeData();
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData tema = ThemeData();
-
     return MaterialApp(
       home: const MyHomePage(),
       theme: tema.copyWith(
-          colorScheme: tema.colorScheme.copyWith(
-            primary: Colors.purple,
-            secondary: Colors.amber,
+        colorScheme: tema.colorScheme.copyWith(
+          primary: Colors.purple,
+          secondary: Colors.amber,
+        ),
+        textTheme: tema.textTheme.copyWith(
+          titleLarge: const TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-              backgroundColor: Colors.amber)),
+        ),
+      ),
     );
   }
 }
