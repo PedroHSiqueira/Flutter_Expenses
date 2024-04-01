@@ -19,11 +19,10 @@ class TransactionList extends StatelessWidget {
               child: Row(
             children: [
               Container(
-                margin:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 decoration: BoxDecoration(
                     border: Border.all(
-                  color: Colors.purple,
+                  color: Theme.of(context).primaryColor,
                   width: 2,
                 )),
                 padding: const EdgeInsets.all(10),

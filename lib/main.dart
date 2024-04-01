@@ -8,9 +8,21 @@ main() => runApp(const ExpensesApp());
 
 class ExpensesApp extends StatelessWidget {
   const ExpensesApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: MyHomePage());
+    final ThemeData tema = ThemeData();
+
+    return MaterialApp(
+      home: const MyHomePage(),
+      theme: tema.copyWith(
+          colorScheme: tema.colorScheme.copyWith(
+            primary: Colors.purple,
+            secondary: Colors.amber,
+          ),
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+              backgroundColor: Colors.amber)),
+    );
   }
 }
 
