@@ -18,9 +18,12 @@ class Chart extends StatelessWidget {
         bool sameMonth = recentTrasaction[i].date.month == weekDay.month;
         bool sameYear = recentTrasaction[i].date.year == weekDay.year;
 
-        if(sameDay && sameMonth && sameYear){
+        if (sameDay && sameMonth && sameYear) {
           totalSum += recentTrasaction[i].value;
         }
+
+        print(DateFormat.E().format(weekDay)[0]);
+        print(totalSum);
       }
 
       return {
@@ -32,6 +35,7 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    groupedTrasaction;
     return const Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
