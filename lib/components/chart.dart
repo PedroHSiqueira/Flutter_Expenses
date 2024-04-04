@@ -40,9 +40,10 @@ class Chart extends StatelessWidget {
       child: Row(
         children: groupedTrasaction.map((tr) {
           return ChartBar(
-              label: tr["day"] as String,
-              value: tr["value"] as double,
-              percentage: 0);
+            label: tr["day"] as String,
+            value: tr["value"] as double,
+            percentage: 0.5,
+          );
         }).toList(),
       ),
     );
