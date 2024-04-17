@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_expenses/components/chart.dart';
 import 'dart:math';
+import 'dart:io';
 import 'components/transaction_form.dart';
 import 'components/transaction_list.dart';
 import 'models/transaction.dart';
@@ -130,9 +131,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-            child: const Icon(Icons.add),
-            onPressed: () => _openTransactionFormModal(context)),
+        floatingActionButton: Platform.isIOS
+            ? Container()
+            : FloatingActionButton(
+                child: const Icon(Icons.add),
+                onPressed: () => _openTransactionFormModal(context)),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat);
   }
 }
